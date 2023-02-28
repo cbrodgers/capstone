@@ -1,9 +1,13 @@
-/* Popup container */
-.search{
-
+#container{
+  width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 
+/* Popup container */
 .popup {
     position: relative;
     display: inline-block;
