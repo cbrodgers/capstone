@@ -22,3 +22,5 @@ function openTab(evt, cityName) {
 function openRedirect(url) {
   window.location.href = url;
 }
+
+
