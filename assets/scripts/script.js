@@ -3,7 +3,7 @@ function myFunction() {
     popup.classList.toggle("show");
 }
 
-document.getElementById("defaultOpen").click();
+
 
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
