@@ -1,3 +1,7 @@
+$(window).load(function(){        
+    $('#myModal').modal('show');
+     }); 
+     
 function myFunction() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
@@ -22,5 +26,4 @@ function openTab(evt, cityName) {
 function openRedirect(url) {
   window.location.href = url;
 }
-
 
