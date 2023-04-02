@@ -63,7 +63,9 @@
   text-align: center;
 }
 
-
+.search{
+  text-align: center;
+}
 .search a:hover {
   background-color: #ddd;
   color: black;
