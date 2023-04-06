@@ -59,16 +59,55 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <center>
-        <div id="search" class="bar">
+      <div id="search" class="bar">
         <br>
-      <h2>Check for drug interaction: </h2>
-      <h2><input type="text" placeholder="Search.." id="search" onkeyup="showHint()"></h2>
+        <h2>Check for drug interaction: </h2>
+        <h2><input type="text" placeholder="Search.." id="search" onkeyup="showHint()"></h2>
 
-      <ul></ul>
+      </div>
+
+
+
+<!-- TEST --> 
+      <div id="search" class="col-md-8">
+        <form id="searchForm" class="form-inline" role="form">
+          <div class="row">
+            <div id="searchByArea"
+              class="form-group col-md-4 col-sm-4 col-xs-4">
+              <button id="infoBtn" type="button" class="btn" title="Info">
+                <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+              </button>
+  
+              <!-- Type Info Button -->
+              
+            </div>
+            <div id="searchTermArea"
+              class="form-group col-md-8 col-sm-8 col-xs-8">
+              <div class="input-group">
+                <input type="search" id="searchTerm" autocomplete="on"
+                  class="form-control clearable" placeholder="Search...">
+                
+  
+                  <button type="submit" id="submit" class="btn"
+                    data-toggle='tooltip' title='search'>
+                    <p>submit</p>
+                  </button>
+                  
+              </div>
+  
+            </div>
+          </div>
+        </form>
+      </div>
     </center>
       
-      </div>
-      </div>
+    <!-- TEST --> 
+
+
+
+
+
+
 
       <div id="warning" class="alert alert-warning">
         The medical information shown is not an official recommendation by a liscensed physician. Please consult a liscensed physician before use.
@@ -96,10 +135,29 @@
       
     </div>
 
+    <!-- TEST --> 
+    <script defer src="scripts/interaction.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- TEST --> 
+
     <script type="text/javascript" src="assets/scripts/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   
-  
+    <script>
+      var usearchTerm = "";
+    </script>
+
+
     <footer id="colophon">
       <h6>&copy;2023 KnowRX <a href="cbrodgers@ualr.edu"><u>Report a Problem</u></a></h6>
     </footer>
