@@ -62,26 +62,11 @@
       <div id="search" class="bar">
         <br>
         <h2>Check for Drug Interaction: </h2>
-        <h2><input type="text" placeholder="Search.." id="search" ><input type="submit" id="submit" value="Search"></h2>
-        
+        <h2><input type="text" placeholder="Search.." id="search" onkeyup="showHint()"><input type="submit" id="submit" value="Search"></h2>
+        <p>Suggestions: <span id="txtHint"></span></p>
       </div>
 
-    <script> 
     
-  function NAME() {
-    const form = document.querySelector('search');
-    
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      const obj = Object.fromEntries(fd);
-
-      const json = JSON.stringify(obj);
-    })
-  } 
-
-
-    </script>
       <!-- TEST -->
      
     
@@ -90,14 +75,52 @@
     </center>
        
     <!-- TEST --> 
-  <script>
-    fetch('https://rxnav.nlm.nih.gov/REST/displaynames.json')
-  // get the JSON data
-    .then(response => response.json())
-  // use (display) the JSON data
-    .then(data => console.log(data))
+    <script>
+      function showHint() {
+    
+    /* On each keystroke, get the current value of the input text box */
+    var str = document.getElementById("search").value;
+    
+    /* if the textbox is empty, then the hint is empty */
 
-  </script>
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+
+    } else {
+
+        /* URL for AJAX Call */
+        var myURL = "https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts";
+        
+        /* AJAX Method (usually GET) */
+        var myMethod = "GET";
+        
+        /* Object containing the data sent to the AJAX page.
+        The "gethint.php" page requires the "str" value 
+        The properites of the object must EXACTLY match the requirement of the AJAX page*/
+
+        var myData = {};
+        myData.fullName = str;
+
+        /* Make sure the document is ready */
+        $(document).ready(function() { 
+            
+            /* Perfomr AJAX call */
+            
+            $.ajax({
+              method: myMethod,
+              data: myData,
+              url: myURL
+            })
+        
+            /* AJAX complete - your code goes here - display the returned message */
+              .done(function( msg ) {
+                document.getElementById("txtHint").innerHTML = msg;
+            });
+        });
+    }
+}
+    </script>
     <!-- TEST --> 
 
 
@@ -137,9 +160,7 @@
     <script type="text/javascript" src="assets/scripts/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   
-    <script>
-      var usearchTerm = "";
-    </script>
+  
 
 
     <footer id="colophon">
