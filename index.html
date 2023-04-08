@@ -61,48 +61,44 @@
     <center>
       <div id="search" class="bar">
         <br>
-        <h2>Check for drug interaction: </h2>
-        <h2><input type="text" placeholder="Search.." id="search" onkeyup="showHint()"></h2>
-
+        <h2>Check for Drug Interaction: </h2>
+        <h2><input type="text" placeholder="Search.." id="search" ><input type="submit" id="submit" value="Search"></h2>
+        
       </div>
 
+    <script> 
+    
+  function NAME() {
+    const form = document.querySelector('search');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const obj = Object.fromEntries(fd);
+
+      const json = JSON.stringify(obj);
+    })
+  } 
 
 
-<!-- TEST --> 
-      <div id="search" class="col-md-8">
-        <form id="searchForm" class="form-inline" role="form">
-          <div class="row">
-            <div id="searchByArea"
-              class="form-group col-md-4 col-sm-4 col-xs-4">
-              <button id="infoBtn" type="button" class="btn" title="Info">
-                <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
-              </button>
-  
-              <!-- Type Info Button -->
-              
-            </div>
-            <div id="searchTermArea"
-              class="form-group col-md-8 col-sm-8 col-xs-8">
-              <div class="input-group">
-                <input type="search" id="searchTerm" autocomplete="on"
-                  class="form-control clearable" placeholder="Search...">
-                
-  
-                  <button type="submit" id="submit" class="btn"
-                    data-toggle='tooltip' title='search'>
-                    <p>submit</p>
-                  </button>
-                  
-              </div>
-  
-            </div>
-          </div>
-        </form>
-      </div>
+    </script>
+      <!-- TEST -->
+     
+    
+      <!-- TEST --> 
+
     </center>
-      
+       
     <!-- TEST --> 
+  <script>
+    fetch('https://rxnav.nlm.nih.gov/REST/displaynames.json')
+  // get the JSON data
+    .then(response => response.json())
+  // use (display) the JSON data
+    .then(data => console.log(data))
 
+  </script>
+    <!-- TEST --> 
 
 
 
@@ -119,24 +115,12 @@
       
 
 
-      <script>
-        fetch('https://rxnav.nlm.nih.gov/REST/displaynames.json')
-        .then(res=> {
-          return res.json();
-        })
-        .then(data => {
-          x = data.displayTermsList.term[1]
-          console.log(data);
-
-        })
-        .catch(error => console.log(error));
-
-      </script>
+      
       
     </div>
 
     <!-- TEST --> 
-    <script defer src="scripts/interaction.js"></script>
+    
 
 
 
