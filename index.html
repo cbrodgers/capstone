@@ -62,8 +62,8 @@
       <div id="search" class="bar">
         <br>
         <h2>Check for Drug Interaction: </h2>
-        <h2><input type="text" placeholder="Search.." id="search" onkeyup="showHint()"><input type="submit" id="submit" value="Search"></h2>
-        <p>Suggestions: <span id="txtHint"></span></p>
+        <h2><input type="text" placeholder="Search.." id="search" ><input type="submit" id="submit" value="Search"></h2>
+        <p>Suggestions: <span id="hint">ibuprofen</span></p>
       </div>
 
     
@@ -75,52 +75,23 @@
     </center>
        
     <!-- TEST --> 
-    <script>
-      function showHint() {
-    
-    /* On each keystroke, get the current value of the input text box */
-    var str = document.getElementById("search").value;
-    
-    /* if the textbox is empty, then the hint is empty */
+  <script>
+    fetch('https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json')
+        .then(res=> {
+          return res.json();
+        })
+        .then(data => {
+       
+          x = JSON.stringify(data)
+          y = document.getElementById("hint").innerHTML = x.firstName;
+          console.log(y);
 
-    if (str.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
-        return;
 
-    } else {
+        })
+        .catch(error => console.log(error));
 
-        /* URL for AJAX Call */
-        var myURL = "https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts";
-        
-        /* AJAX Method (usually GET) */
-        var myMethod = "GET";
-        
-        /* Object containing the data sent to the AJAX page.
-        The "gethint.php" page requires the "str" value 
-        The properites of the object must EXACTLY match the requirement of the AJAX page*/
+</script>
 
-        var myData = {};
-        myData.fullName = str;
-
-        /* Make sure the document is ready */
-        $(document).ready(function() { 
-            
-            /* Perfomr AJAX call */
-            
-            $.ajax({
-              method: myMethod,
-              data: myData,
-              url: myURL
-            })
-        
-            /* AJAX complete - your code goes here - display the returned message */
-              .done(function( msg ) {
-                document.getElementById("txtHint").innerHTML = msg;
-            });
-        });
-    }
-}
-    </script>
     <!-- TEST --> 
 
 
