@@ -64,12 +64,32 @@
         <h2>Check for Drug Interaction: </h2>
         <h2><input type="text" placeholder="Search.." id="search" ><input type="submit" id="submit" value="Search"></h2>
         <div id="results"></div>
+        <table id="Names"></table>
       </div>
 
     
       <!-- TEST -->
      
-    <script src="assets/scripts/interaction.js"></script>
+      <script>
+        fetch('https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json')
+            .then(res=> {
+              return res.json();
+            })
+            .then(data => {
+           
+              x = JSON.stringify(data)
+              //y = document.getElementById("results").innerHTML = x.minConcept.firstName;
+              console.log(x);
+    
+    
+    
+    
+            })
+            .catch(error => console.log(error));
+    
+    
+    </script>
+    
       <!-- TEST --> 
 
     </center>
