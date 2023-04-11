@@ -63,34 +63,19 @@
         <br>
         <h2>Check for Drug Interaction: </h2>
         <h2><input type="text" placeholder="Search.." id="search" ><input type="submit" id="submit" value="Search"></h2>
-        <p>Suggestions: <span id="hint">ibuprofen</span></p>
+        <div id="results"></div>
       </div>
 
     
       <!-- TEST -->
      
-    
+    <script src="assets/scripts/interaction.js"></script>
       <!-- TEST --> 
 
     </center>
        
     <!-- TEST --> 
-  <script>
-    fetch('https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json')
-        .then(res=> {
-          return res.json();
-        })
-        .then(data => {
-       
-          x = JSON.stringify(data)
-          y = document.getElementById("hint").innerHTML = x.firstName;
-          console.log(y);
-
-
-        })
-        .catch(error => console.log(error));
-
-</script>
+  
 
     <!-- TEST --> 
 
