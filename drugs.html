@@ -15,11 +15,83 @@
   <body>
     <div id="container">
       <div id="Mast" class="header">
-        <h1>Common Drugs per Provider</h1>
+        <h1>Common Drugs</h1>
         <div class="tab">
           <button class="tablinks" onclick="openRedirect('index.html')">Home</button>
+          <button class="tablinks" onclick="openRedirect('drugs.html')" id="defaultOpen">Top Drugs</button>
           <button class="tablinks" onclick="openRedirect('about.html')">About</button>
         </div>
 
+        <br>
+        <h3>Top Perscribed Drugs</h3>
+        <p>-Data is based on US statistics per 2022-</p>
+        <hr>
 
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">-Atorvastatin-</h5>
+                <p class="card-text">Common Names: Lipitor</p>
+                <p class="card-text">Treats high cholesterol</p>
+                <p class="card-text">Prescription Amount: 114,510,000</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">-2022-</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">-Levothyroxine-</h5>
+                <p class="card-text">Common Names: Levoxyl, Synthroid</p>
+                <p class="card-text">Treats Hypothyroidism</p>
+                <p class="card-text">Prescription Amount: 99,000,000</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">-2022-</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">-Metoformin-</h5>
+                <p class="card-text">Common Names: Glucophage, Riomet</p>
+                <p class="card-text">Treats Type-2 Diabetes</p>
+                <p class="card-text">Prescription Amount: 92,600,000</p>
+                <br>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">-2022-</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
     
+        <ul class="list-group">
+          <li class="list-group-item">Lisinopril</li>
+          <li class="list-group-item">Amlodipine</li>
+          <li class="list-group-item">Metoprolol</li>
+          <li class="list-group-item">Albuterol</li>
+          <li class="list-group-item">Omeprazole</li>
+          <li class="list-group-item">Losartan</li>
+          <li class="list-group-item">Gabapentin</li>
+        </ul>
+
+        <br>
+        <hr>
+
+        <h3>Sources</h3>
+        <p>The source for the data above:</p>
+        <p><a href='https://www.healthgrades.com/right-care/patient-advocate/the-top-50-drugs-prescribed-in-the-united-states'></a><u>The Top 50 Drugs Prescribed in the United States</u></p>
+        <p>Citation:</p>
+        <p>Written By Sarah Lewis. (2022, September 29). The top 50 drugs prescribed in the United States. Healthgrades. Retrieved April 12, 2023, from https://www.healthgrades.com/right-care/patient-advocate/the-top-50-drugs-prescribed-in-the-united-states </p>
+        
+        <hr>
+        <script type="text/javascript" src="assets/scripts/script.js"></script>
+    <footer id="colophon">
+      <h6>&copy;2023 KnowRX <a href="cbrodgers@ualr.edu">Report a Problem</a></h6>
+    </footer>
