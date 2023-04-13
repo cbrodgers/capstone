@@ -83,6 +83,18 @@
         .then(data => {
        
           x = JSON.stringify(data)
+          y = JSON.parse(x)
+          q = y.minConceptGroup.minConcept[0]
+          z = y.minConceptGroup.minConcept[0].fullName
+          zz= y.minConceptGroup.minConcept[0].rxcui
+
+          for( i = 0; i < y.minConceptGroup.minConcept.length; i++ ){
+            fn = y.minConceptGroup.minConcept[i].fullName
+            if (fn.includes("ibuprofen") == true) {
+              foundit = i
+            } 
+
+          }
           console.log(x);
 
 
