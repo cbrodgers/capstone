@@ -24,6 +24,14 @@ async function getName() {
                 }
 
             }
+        }
+        else {
+            /* AJAX complete with error - probably invalid stock ticker symbol */
+                /* Your code to process the result goes here - 
+                    display the returned message */
+            alert("Drug Not Found - Status: " + nameObject.status)
+            return;
+        
         
         
 
