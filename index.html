@@ -68,14 +68,12 @@
       <form id="name_search">
         <div class="search" id="search">
         <h2>Check for Drug Interaction: </h2>
-        <h2><input type="text" id="search" name="search" placeholder="Search.."> <input type="submit" id="submit" value="submit" onclick="getName();"></h2>
-        <label for="results" class="formlabel">Results: </label>
-        <span id="results"></span>
-        
+        <h2><input type="text" id="search" name="search" placeholder="Search.."> <input type="submit" id="submit" value="submit"></h2>
+        <div id="results"><h3>Results: </h3></div>
         
         </div>
       </form>
-      <!--
+      
       <script>
         var search_name = document.getElementById("search").value;
 
@@ -88,6 +86,10 @@
        
           
 
+          var display = document.getElementById("results");
+
+
+
           x = JSON.stringify(data)
           y = JSON.parse(x)
           q = y.minConceptGroup.minConcept[0]
@@ -97,19 +99,21 @@
 
           for( i = 0; i < y.minConceptGroup.minConcept.length; i++ ){
             fn = y.minConceptGroup.minConcept[i].fullName
-            if (fn.includes(search_name) == true) {
-              name = i
+            
+            if (fn.includes("ibuprofen") == true) {
+              //var mainContainer = document.getElementById("myData");
+              foundname = i
               myrxcui = y.minConceptGroup.minConcept[i].rxcui
-              document.getElementById("results").innerHTML = "Name: " + name + ". Rxcui:" + myrxcui
+              //div = document.createElement("div");
+              //div.innerHTML = 'Name: ' + foundname + ' ' + myrxcui;
+              //mainContainer.appendChild(div);
             }
+            
+        
 
-
+            
           }
           console.log(x);
-
-
-
-
 
 
 
@@ -117,7 +121,7 @@
         })
         .catch(error => console.log(error));
       </script>
-      <!-->
+      
 
     </center>
     
@@ -155,7 +159,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="assets/scripts/interaction.js"></script>
+  
 
 
     <footer id="colophon">
