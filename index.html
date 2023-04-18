@@ -65,16 +65,16 @@
     <center>
 
       
-      <form id="name_search">
-        <div class="search" id="search">
+      <form id="name_search" onsubmit="return false">
+        <div class="search">
         <h2>Check for Drug Interaction: </h2>
-        <h2><input type="text" id="search" name="search" placeholder="Search.."> <input type="submit" id="submit" value="submit"></h2>
+        <h2><input type="text" id="search" name="search" placeholder="Search.."> <input type="submit" id="submit" value="submit" onclick="getName()"></h2>
         <div id="results"><h3>Results: </h3></div>
         
         </div>
       </form>
       
-      <script>
+      <!--<script>
         var search_name = document.getElementById("search").value;
 
 
@@ -120,8 +120,8 @@
 
         })
         .catch(error => console.log(error));
-      </script>
-      
+      </script><!-->
+      <script src="assets/scripts/interaction.js"></script>
 
     </center>
     
