@@ -36,6 +36,8 @@ async function getData(rxcui) {
     "use strict";
     var x = rxcui
     //x='88014';
+    //check for hasOwnProperty() method 
+    //to see if can find or has data
 
     var reactionURL = "https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=" + x + "&sources=ONCHigh";
 
