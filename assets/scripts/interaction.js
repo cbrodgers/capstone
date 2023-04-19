@@ -35,8 +35,9 @@ async function getName() {
 async function getData(rxcui) {
     "use strict";
     var x = rxcui
+    //x='88014';
 
-    var reactionURL = "https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=" + rxcui + "&sources=ONCHigh";
+    var reactionURL = "https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=" + x + "&sources=ONCHigh";
 
     var interactionObject = await fetch(reactionURL);
 
@@ -44,8 +45,13 @@ async function getData(rxcui) {
 
     var r = JSON.parse(reactionJSONText);
 
-    var int = r.interactionTypeGroup.interactionPair.description;
+//    var intname = r.interactionTypeGroup[0].interactionType[0].interactionPair[0].name;
+    var fulldescription = "";
+
+    for( var i = 0; i < r.interactionTypeGroup[0].interactionType[0].interactionPair.length; i++ ){
+        var intdescription = r.interactionTypeGroup[0].interactionType[0].interactionPair[i].description;
+        fulldescription = fulldescription + intdescription + "<br>"
+    }
     
-    
-    document.getElementById("interaction").innerHTML = int;
+    document.getElementById("interaction").innerHTML = fulldescription;
 }
