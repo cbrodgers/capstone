@@ -32,6 +32,18 @@ async function getName() {
     }
 }
 
+//async function getSource(){
+    //var sourceURL = "https://rxnav.nlm.nih.gov/REST/interaction/sources.json";
+
+    //var sourceObject = await fetch(sourceURL);
+
+    //var sourceJSONText = await sourceObject.text();
+
+    //var src = JSON.parse(sourceJSONText);
+
+    //var sources = src.SourceList.source[i]
+//}
+
 async function getData(rxcui) {
     "use strict";
     var x = rxcui
@@ -39,7 +51,7 @@ async function getData(rxcui) {
     //check for hasOwnProperty() method 
     //to see if can find or has data
 
-    var reactionURL = "https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=" + x + "&sources=ONCHigh";
+    var reactionURL = "https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=" + x + "&sources=DrugBank";
 
     var interactionObject = await fetch(reactionURL);
 
